@@ -48,6 +48,10 @@ CREATE TABLE Employees (
 
 )
 
+alter table Employees
+
+add Name as FirstName +' '+ MiddleName +' ' + Lastname not null
+
 insert into Towns (Name) values
 ('Sofia'), 
 ('Plovdiv'), 
@@ -69,6 +73,9 @@ insert into Employees(FirstName, MiddleName, LastName, JobTitle, DepartmentId, H
 ('Greta','Garbo','Garbo','Intern',5,'08/08/2016',525.25 ),
 ('Meryl','Strep','Strep','CEO',2,'09/12/2007 ',3000.00 ),
 ('Peter','Pan','Pan','Intern',3,'08/08/2016',599.88 )
+
+
+select CONCAT(FirstName , ' ' , MiddleName , ' ' , Lastname) as Name,JobTitle, DepartmentId, HireDate, Salary from Employees
 
 select * from Towns
 
